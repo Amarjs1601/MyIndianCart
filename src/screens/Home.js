@@ -5,10 +5,12 @@ import Categories from '../components/layout/category/Categories';
 import Banner from '../components/layout/category/Banner';
 import {BannerData} from '../data/BannerData';
 import Products from '../components/products/Products';
+import Header from '../components/layout/Header';
 
 const Home = () => {
   return (
     <Layout>
+        <Header />
       <Categories />
       <Banner data={BannerData} />
       <Products />

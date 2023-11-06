@@ -50,8 +50,9 @@ const CarouselComponent = ({ data, customWidth }) => {
                 lockScrollWhileSnapping={true}
                 enableSnap={true}
                 useScrollView={true}
+                
             />
-            <Pagination
+            {/* <Pagination
                 dotsLength={data.length}
                 activeDotIndex={getIndex}
                 carouselRef={isCarousel}
@@ -64,7 +65,7 @@ const CarouselComponent = ({ data, customWidth }) => {
                     top: -20,
                 }}
                 tappableDots={true}
-            />
+            /> */}
          
         </View>
     )
