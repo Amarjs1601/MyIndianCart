@@ -11,7 +11,9 @@ const Home = () => {
   return (
     <Layout>
         <Header />
+      <View >
       <Categories />
+      </View>
       <Banner data={BannerData} />
       <Products />
     </Layout>

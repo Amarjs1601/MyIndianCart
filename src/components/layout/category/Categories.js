@@ -11,7 +11,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const Categories = () => {
   return (
-    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
+    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
       <View style={styles.container}>
         {categoriesData?.map((item, index) => {
           console.log(item.icon);
@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
     padding: 5,
     justifyContent: 'space-around',
     backgroundColor: '#fff',
-    
   },
   categoryContainer: {
     padding: 10,

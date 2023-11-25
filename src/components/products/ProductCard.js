@@ -23,8 +23,8 @@ const ProductCard = ({p}) => {
     <View style={styles.card}>
       <Image style={styles.image} source={{uri: p?.imageUrl}} />
       <Text style={styles.productname}>{p?.name}</Text>
-      <Text style={styles.productdescription}>
-        {p?.description.toString(0, 20)} ...
+      <Text numberOfLines={2} style={styles.productdescription}>
+        {p?.description.toString(0, 30)} ...
       </Text>
       {/* <Text style={styles.productdescription}>{p?.category}</Text> */}
       <Text style={styles.productdescription}>{p?.price}</Text>
@@ -50,9 +50,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     backgroundColor: '#fff',
     justifyContent: 'center',
-    padding: 10,
+    padding: 8,
     width: '45%',
     borderRadius: 10,
+   
 
   
   },
