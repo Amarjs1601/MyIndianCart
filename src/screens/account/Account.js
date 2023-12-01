@@ -4,7 +4,7 @@ import Layout from '../../components/layout/Layout';
 import {userData} from '../../data/UserData';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-const Account = () => {
+const Account = ({navigation}) => {
   return (
     <Layout>
       <View style={styles.container}>
@@ -14,26 +14,26 @@ const Account = () => {
             Hi
             <Text style={{color: 'green'}}> {userData.name} 👋</Text>
           </Text>
-          <Text style={{textAlign: 'center'}}>email : {userData.eamil}</Text>
+          <Text style={{textAlign: 'center'}}>email : {userData.email}</Text>
           <Text style={{width: '100%', textAlign: 'center'}}>
             contact : {userData.contact}
           </Text>
         </View>
         <View style={styles.btnContainer}>
           <Text style={styles.heading}>Account Setting</Text>
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity style={styles.btn} onPress={()=>{navigation.navigate('profile',{id:userData.id})}}>
             <AntDesign style={styles.btnIcon} name="edit" />
             <Text style={styles.btnText}>Edit Profile</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity style={styles.btn} onPress={()=>{navigation.navigate('MyOrder',{id:userData.id})}}>
             <AntDesign style={styles.btnIcon} name="bars" />
             <Text style={styles.btnText}>My Orders</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity style={styles.btn} onPress={()=>{navigation.navigate('notification')}}>
             <AntDesign style={styles.btnIcon} name="bells" />
             <Text style={styles.btnText}>Notification</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity style={styles.btn} onPress={()=>{navigation.navigate('DashBoard',{id:userData.id})}}>
             <AntDesign style={styles.btnIcon} name="windows" />
             <Text style={styles.btnText}>Admin Panel</Text>
           </TouchableOpacity>

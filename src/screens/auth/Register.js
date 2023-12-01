@@ -15,7 +15,7 @@ const Register = ({navigation}) => {
   // Register Function
 
   const handleRegister = () => {
-    if (!email || !password || !name || address || city || mobNo) {
+    if (!email || !password || !name || !address || !city || !mobNo) {
       return alert('Please Add Email And Password And Name And Address And City or Mobile Number');
     }
     alert('Register Successfully');
