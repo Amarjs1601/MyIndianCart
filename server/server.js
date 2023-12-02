@@ -5,9 +5,13 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 // routes imports
 import testRoute from '../server/routes/testRoutes.js';
+import connectDB from './config/db.js';
 
 // dot env config
 dotenv.config();
+
+// database connection
+connectDB();
 
 // rest object
 
@@ -21,6 +25,7 @@ app.use(cors());
 // route
 
 app.use('/api/v1', testRoute);
+app.use('api/v1/user',testRoute)
 
 app.get('/', (req, res) => {
   return res.status(200).send('<h1>Welcome To Node Server</h1>');
