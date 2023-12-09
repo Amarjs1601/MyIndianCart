@@ -1,25 +1,37 @@
-import express from "express"
-import { createProductController, getAllProductController, getSingleProductController, updateProductController, updateProductImageController } from "../controllers/productController.js"
-import { isAuth } from "../middlewares/authMiddleware.js"
-import { singleUpload } from "../middlewares/multer.js"
+import express from 'express';
+import {
+  createProductController,
+  deleteProductController,
+  deleteProductImageController,
+  getAllProductController,
+  getSingleProductController,
+  updateProductController,
+  updateProductImageController,
+} from '../controllers/productController.js';
+import {isAuth} from '../middlewares/authMiddleware.js';
+import {singleUpload} from '../middlewares/multer.js';
 
-const router = express.Router()
-
+const router = express.Router();
 
 // routes
-router.get('/get-all',getAllProductController)
+router.get('/get-all', getAllProductController);
 
 //GET SINGLE-PRODUCT
-router.get('/:id',getSingleProductController)
+router.get('/:id', getSingleProductController);
 
 // CREATE PRODUCT
-router.post('/create',isAuth,singleUpload,createProductController)
+router.post('/create', isAuth, singleUpload, createProductController);
 
 // UPDATE PRODUCT
-router.put('/:id',updateProductController)
+router.put('/:id', updateProductController);
 
 // UPDATE Product Image
-router.put('/image/:id',isAuth,singleUpload,updateProductImageController)
+router.put('/image/:id', isAuth, singleUpload, updateProductImageController);
 
+// DELETE PRODUCT IMAGE
+router.delete('/delete-image/:id', isAuth, deleteProductImageController);
 
-export default router
+// DELETE PRODUCT ROUTES
+router.delete('/delete/:id', isAuth, deleteProductController);
+
+export default router;

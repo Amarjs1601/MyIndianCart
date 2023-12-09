@@ -35,9 +35,12 @@ app.use(cookieParser());
 import testRoute from '../server/routes/testRoutes.js';
 import userRoutes from '../server/routes/userRoutes.js';
 import productRoutes from '../server/routes/productRoutes.js'
+import categoryRoutes from '../server/routes/categoryRoutes.js'
 app.use('/api/v1', testRoute);
 app.use('/api/v1/user', userRoutes);
 app.use('/api/v1/product',productRoutes)
+app.use('/api/v1/category',categoryRoutes)
+
 
 
 app.get('/', (req, res) => {
