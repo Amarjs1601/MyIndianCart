@@ -1,5 +1,5 @@
 import express from 'express';
-import {isAuth} from '../middlewares/authMiddleware.js';
+import {isAdmin, isAuth} from '../middlewares/authMiddleware.js';
 import {singleUpload} from '../middlewares/multer.js';
 import {
   createCategory,
@@ -12,16 +12,16 @@ const router = express.Router();
 
 // routes
 // --------------- CATEGORY ROUTES --------------------
-router.get('/create', isAuth, createCategory);
+router.get('/create', isAuth,isAdmin, createCategory);
 
 // GET ALL CATEGORY
 
 router.get('/get-all', getAllCategoriesController);
 
 // GET ALL CATEGORY
-router.delete('/delete/:id', isAuth, deleteCategoryController);
+router.delete('/delete/:id',isAuth,isAdmin, deleteCategoryController);
 
 // UPDATE ALL CATEGORY
-router.put('/update/:id', isAuth, updateCategoryController);
+router.put('/update/:id', isAuth,isAdmin, updateCategoryController);
 
 export default router;
